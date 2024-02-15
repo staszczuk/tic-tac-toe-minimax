@@ -15,7 +15,7 @@ public:
     Board(unsigned int rows = def_rows, unsigned int cols = def_cols,
           unsigned int k_in_a_row = def_k_in_a_row);
 
-    void make_move(Move move, Player *player) const;
+    void make_move(Move move, Mark mark) const;
 
     friend std::ostream &operator<<(std::ostream &os, const Board &board);
 

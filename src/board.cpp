@@ -14,17 +14,17 @@ Board::Board(unsigned int rows, unsigned int cols, unsigned int k_in_a_row)
     }
 }
 
-void Board::make_move(Move move, Player *player) const
+void Board::make_move(Move move, Mark mark) const
 {
     if (move.row >= this->rows or move.col >= this->cols)
     {
         throw InvalidMoveException();
     }
-    if (this->fields[move.row][move.col]->player != nullptr)
+    if (mark == Mark::empty)
     {
         throw InvalidMoveException();
     }
-    this->fields[move.row][move.col]->player = player;
+    this->fields[move.row][move.col] = mark;
 }
 
 std::ostream &operator<<(std::ostream &os, const Board &board)
