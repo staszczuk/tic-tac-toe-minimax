@@ -10,6 +10,8 @@ class Player
 public:
     Player(Mark mark);
 
+    Mark get_mark() const;
+
     friend std::ostream &operator<<(std::ostream &os, const Player &player);
 
 private:
