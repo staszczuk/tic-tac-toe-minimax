@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(tic-tac-toe
+    src/field.cpp
+    src/field.h
     src/main.cpp
     src/player.cpp
     src/player.h
