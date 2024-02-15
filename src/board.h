@@ -2,6 +2,7 @@
 #define BOARD_H
 
 #include "invalid_move_exception.h"
+#include "mark.h"
 #include "move.h"
 
 const unsigned int def_rows = 3;
@@ -22,7 +23,7 @@ public:
 
 private:
     const unsigned int rows, cols, k_in_a_row;
-    Field ***fields;
+    Mark **fields;
 };
 
 #endif
