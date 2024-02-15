@@ -1,6 +1,8 @@
 #ifndef BOARD_H
 #define BOARD_H
 
+#include <vector>
+
 #include "invalid_move_exception.h"
 #include "mark.h"
 #include "move.h"
@@ -14,6 +16,8 @@ class Board
 public:
     Board(unsigned int rows = def_rows, unsigned int cols = def_cols,
           unsigned int k_in_a_row = def_k_in_a_row);
+
+    std::vector<Move> get_available_moves() const;
 
     void make_move(Move move, Mark mark) const;
 
