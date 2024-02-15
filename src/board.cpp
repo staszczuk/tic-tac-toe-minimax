@@ -21,7 +21,7 @@ std::vector<Move> Board::get_available_moves() const
     {
         for (unsigned int col = 0; col < this->cols; col++)
         {
-            if (this->fields[row][col] != Mark::empty)
+            if (this->fields[row][col] == Mark::empty)
             {
                 available_moves.push_back(Move(row, col));
             }
