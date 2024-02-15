@@ -1,7 +1,6 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include "field.h"
 #include "invalid_move_exception.h"
 #include "move.h"
 

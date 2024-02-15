@@ -9,8 +9,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_executable(tic-tac-toe
     src/board.cpp
     src/board.h
-    src/field.cpp
-    src/field.h
     src/invalid_move_exception.cpp
     src/invalid_move_exception.h
     src/main.cpp
