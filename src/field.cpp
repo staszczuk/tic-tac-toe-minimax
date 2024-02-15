@@ -5,6 +5,13 @@ Field::Field(unsigned int row, unsigned int col, Player *player)
 
 std::ostream &operator<<(std::ostream &os, const Field &field)
 {
-    os << field.player;
+    if (field.player != nullptr)
+    {
+        os << field.player;
+    }
+    else
+    {
+        os << '_';
+    }
     return os;
 }
