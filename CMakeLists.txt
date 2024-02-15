@@ -11,6 +11,8 @@ add_executable(tic-tac-toe
     src/board.h
     src/field.cpp
     src/field.h
+    src/invalid_move_exception.cpp
+    src/invalid_move_exception.h
     src/main.cpp
     src/player.cpp
     src/player.h
