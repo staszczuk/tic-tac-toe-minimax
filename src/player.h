@@ -3,15 +3,17 @@
 
 #include <iostream>
 
+#include "mark.h"
+
 class Player
 {
 public:
-    Player(char mark);
+    Player(Mark mark);
 
     friend std::ostream &operator<<(std::ostream &os, const Player &player);
 
 private:
-    const char mark;
+    const Mark mark;
 };
 
 #endif

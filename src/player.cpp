@@ -1,6 +1,6 @@
 #include "player.h"
 
-Player::Player(char mark) : mark(mark) {}
+Player::Player(Mark mark) : mark(mark) {}
 
 std::ostream &operator<<(std::ostream &os, const Player &player)
 {
