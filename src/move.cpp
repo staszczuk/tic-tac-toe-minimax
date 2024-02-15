@@ -6,4 +6,5 @@ Move::Move(unsigned int row, unsigned int col)
 std::ostream &operator<<(std::ostream &os, const Move &move)
 {
     os << '[' << move.row << ' ' << move.col << ']';
+    return os;
 }
