@@ -3,6 +3,7 @@
 
 #include <vector>
 
+#include "game_state.h"
 #include "invalid_move_exception.h"
 #include "mark.h"
 #include "move.h"
@@ -16,6 +17,8 @@ class Board
 public:
     Board(unsigned int rows = def_rows, unsigned int cols = def_cols,
           unsigned int k_in_a_row = def_k_in_a_row);
+
+    GameState check_win() const;
 
     std::vector<Move> get_available_moves() const;
 

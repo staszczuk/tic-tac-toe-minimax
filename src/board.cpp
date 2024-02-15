@@ -14,6 +14,145 @@ Board::Board(unsigned int rows, unsigned int cols, unsigned int k_in_a_row)
     }
 }
 
+GameState Board::check_win() const
+{
+    // rows
+    for (unsigned int row = 0; row < this->rows; row++)
+    {
+        Mark current = Mark::empty;
+        unsigned int in_a_row = 0;
+        for (unsigned int col = 0; col < this->cols; col++)
+        {
+            if (this->fields[row][col] == current)
+            {
+                in_a_row++;
+                if (in_a_row == this->k_in_a_row)
+                {
+                    switch (current)
+                    {
+                    case Mark::x:
+                        return GameState::player_x_won;
+                        break;
+                    case Mark::o:
+                        return GameState::player_o_won;
+                        break;
+                    default:
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                current = this->fields[row][col];
+                in_a_row = 1;
+            }
+        }
+    }
+
+    // cols
+    for (unsigned int col = 0; col < this->cols; col++)
+    {
+        Mark current = Mark::empty;
+        unsigned int in_a_row = 0;
+        for (unsigned int row = 0; row < this->rows; row++)
+        {
+            if (this->fields[row][col] == current)
+            {
+                in_a_row++;
+                if (in_a_row == this->k_in_a_row)
+                {
+                    switch (current)
+                    {
+                    case Mark::x:
+                        return GameState::player_x_won;
+                        break;
+                    case Mark::o:
+                        return GameState::player_o_won;
+                        break;
+                    default:
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                current = this->fields[row][col];
+                in_a_row = 1;
+            }
+        }
+    }
+
+    for (unsigned int row = 0; row < this->rows - this->k_in_a_row + 1; row++)
+    {
+        // anti-diagonals
+        for (unsigned int col = 0; col < this->cols - this->k_in_a_row + 1; col++)
+        {
+            Mark current = this->fields[row][col];
+            bool won = true;
+            for (unsigned int i = 1; i < this->k_in_a_row; i++)
+            {
+                if (this->fields[row + i][col + i] != current)
+                {
+                    won = false;
+                    break;
+                }
+            }
+            if (won)
+            {
+                switch (current)
+                {
+                case Mark::x:
+                    return GameState::player_x_won;
+                    break;
+                case Mark::o:
+                    return GameState::player_o_won;
+                    break;
+                default:
+                    break;
+                }
+            }
+        }
+
+        // diagonals
+        for (unsigned int col = this->cols - 1; col >= this->k_in_a_row - 1; col--)
+        {
+            Mark current = this->fields[row][col];
+            bool won = true;
+            for (unsigned int i = 1; i < this->k_in_a_row; i++)
+            {
+                if (this->fields[row + i][col - i] != current)
+                {
+                    won = false;
+                    break;
+                }
+            }
+            if (won)
+            {
+                switch (current)
+                {
+                case Mark::x:
+                    return GameState::player_x_won;
+                    break;
+                case Mark::o:
+                    return GameState::player_o_won;
+                    break;
+                default:
+                    break;
+                }
+            }
+        }
+    }
+
+    // tie
+    if (this->get_available_moves().size() == 0)
+    {
+        return GameState::tie;
+    }
+
+    // no winner
+    return GameState::unresolved;
+}
+
 std::vector<Move> Board::get_available_moves() const
 {
     std::vector<Move> available_moves;
