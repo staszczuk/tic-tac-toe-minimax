@@ -17,7 +17,7 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Player &player);
 
-private:
+protected:
     const Mark mark;
 };
 
