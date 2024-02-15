@@ -7,7 +7,7 @@ std::ostream &operator<<(std::ostream &os, const Field &field)
 {
     if (field.player != nullptr)
     {
-        os << field.player;
+        os << *field.player;
     }
     else
     {
