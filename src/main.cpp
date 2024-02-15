@@ -9,8 +9,8 @@ int main()
     Player *player_1 = new Player('x');
     Player *player_2 = new Player('o');
     Board *board = new Board();
-    std::cout << *player_1 << ' ' << *player_2 << '\n'
-              << *board << '\n';
+    board->make_move(Move(0, 1), player_1);
+    std::cout << *board << '\n';
     delete player_1, player_2, board;
     return 0;
 }

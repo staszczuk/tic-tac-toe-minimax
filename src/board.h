@@ -2,6 +2,8 @@
 #define BOARD_H
 
 #include "field.h"
+#include "invalid_move_exception.h"
+#include "move.h"
 
 const unsigned int def_rows = 3;
 const unsigned int def_cols = 3;
@@ -12,6 +14,8 @@ class Board
 public:
     Board(unsigned int rows = def_rows, unsigned int cols = def_cols,
           unsigned int k_in_a_row = def_k_in_a_row);
+
+    void make_move(Move move, Player *player) const;
 
     friend std::ostream &operator<<(std::ostream &os, const Board &board);
 
