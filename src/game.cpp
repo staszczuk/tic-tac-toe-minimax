@@ -14,6 +14,34 @@ Game::Game(Player *player_x, Player *player_o, bool player_x_plays_first)
     }
 }
 
+void Game::start()
+{
+    while (true)
+    {
+        std::cout << *this->board << '\n';
+        this->current_player->make_move(this->board);
+        this->switch_players();
+        GameState game_state = board->check_win();
+        if (game_state != GameState::unresolved)
+        {
+            std::cout << *board << '\n';
+            switch (game_state)
+            {
+            case GameState::player_x_won:
+                std::cout << "Player x won\n";
+                break;
+            case GameState::player_o_won:
+                std::cout << "Player o won\n";
+                break;
+            case GameState::tie:
+                std::cout << "Tie\n";
+                break;
+            }
+            break;
+        }
+    }
+}
+
 void Game::switch_players()
 {
     if (this->current_player == this->player_x)
