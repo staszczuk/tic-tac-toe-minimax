@@ -14,6 +14,20 @@ Board::Board(unsigned int rows, unsigned int cols, unsigned int k_in_a_row)
     }
 }
 
+Board::Board(const Board &board)
+    : rows(board.rows), cols(board.cols), k_in_a_row(board.k_in_a_row)
+{
+    this->fields = new Mark *[this->rows];
+    for (unsigned int row = 0; row < this->rows; row++)
+    {
+        this->fields[row] = new Mark[this->cols];
+        for (unsigned int col = 0; col < this->cols; col++)
+        {
+            this->fields[row][col] = board.fields[row][col];
+        }
+    }
+}
+
 GameState Board::check_win() const
 {
     // rows

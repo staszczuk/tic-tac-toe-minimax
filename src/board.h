@@ -18,6 +18,8 @@ public:
     Board(unsigned int rows = def_rows, unsigned int cols = def_cols,
           unsigned int k_in_a_row = def_k_in_a_row);
 
+    Board(const Board &board);
+
     GameState check_win() const;
 
     std::vector<Move> get_available_moves() const;
