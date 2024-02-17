@@ -10,7 +10,6 @@ void MinimaxPlayer::make_move(Board *board) const
     {
         board->make_move(move, this->mark);
         int minimax_value = this->minimax(board, false);
-        std::cout << minimax_value << ' ';
         board->undo_move(move);
         if (minimax_value > max_value)
         {
@@ -18,7 +17,6 @@ void MinimaxPlayer::make_move(Board *board) const
             best_move = move;
         }
     }
-    std::cout << '\n';
     board->make_move(best_move, this->mark);
 }
 
