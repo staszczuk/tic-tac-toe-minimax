@@ -19,6 +19,8 @@ add_executable(tic-tac-toe
     src/main.cpp
     src/mark.cpp
     src/mark.h
+    src/minimax_player.cpp
+    src/minimax_player.h
     src/move.cpp
     src/move.h
     src/player.cpp
