@@ -12,6 +12,8 @@ Game::Game(Player *player_x, Player *player_o, bool player_x_plays_first)
     {
         this->current_player = player_o;
     }
+    this->player_x->set_mark(Mark::x);
+    this->player_o->set_mark(Mark::o);
 }
 
 void Game::start()

@@ -9,16 +9,18 @@
 class Player
 {
 public:
-    Player(Mark mark);
+    Player();
 
     Mark get_mark() const;
 
     virtual void make_move(Board *board) const = 0;
 
+    virtual void set_mark(Mark mark);
+
     friend std::ostream &operator<<(std::ostream &os, const Player &player);
 
 protected:
-    const Mark mark;
+    Mark mark;
 };
 
 #endif

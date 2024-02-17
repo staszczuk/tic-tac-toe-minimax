@@ -6,7 +6,7 @@
 class HumanPlayer : public Player
 {
 public:
-    HumanPlayer(Mark mark);
+    HumanPlayer();
 
     void make_move(Board *board) const override;
 };

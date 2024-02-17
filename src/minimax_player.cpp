@@ -1,9 +1,6 @@
 #include "minimax_player.h"
 
-MinimaxPlayer::MinimaxPlayer(Mark mark) : Player(mark)
-{
-    this->opponent_mark = this->mark == Mark::x ? Mark::o : Mark::x;
-}
+MinimaxPlayer::MinimaxPlayer() {}
 
 void MinimaxPlayer::make_move(Board *board) const
 {
@@ -62,4 +59,10 @@ int MinimaxPlayer::minimax(Board *board, bool maximizing_turn) const
         }
         return value;
     }
+}
+
+void MinimaxPlayer::set_mark(Mark mark)
+{
+    this->mark = mark;
+    this->opponent_mark = mark == Mark::x ? Mark::o : Mark::x;
 }

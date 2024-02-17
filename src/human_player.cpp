@@ -1,6 +1,6 @@
 #include "human_player.h"
 
-HumanPlayer::HumanPlayer(Mark mark) : Player(mark) {}
+HumanPlayer::HumanPlayer() {}
 
 void HumanPlayer::make_move(Board *board) const
 {

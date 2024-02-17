@@ -9,9 +9,11 @@ const int minus_inf = -2;
 class MinimaxPlayer : public Player
 {
 public:
-    MinimaxPlayer(Mark mark);
+    MinimaxPlayer();
 
     void make_move(Board *board) const override;
+
+    void set_mark(Mark mark) override;
 
 private:
     int minimax(Board *board, bool maximizing_turn) const;
