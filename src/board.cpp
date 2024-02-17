@@ -28,7 +28,7 @@ Board::Board(const Board &board)
     }
 }
 
-GameState Board::check_win() const
+GameState Board::check_game_state() const
 {
     // rows
     for (unsigned int row = 0; row < this->rows; row++)
@@ -160,11 +160,11 @@ GameState Board::check_win() const
     // tie
     if (this->get_available_moves().size() == 0)
     {
-        return GameState::tie;
+        return GameState::draw;
     }
 
     // no winner
-    return GameState::unresolved;
+    return GameState::in_progress;
 }
 
 std::vector<Move> Board::get_available_moves() const

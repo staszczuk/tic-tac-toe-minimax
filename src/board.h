@@ -20,7 +20,7 @@ public:
 
     Board(const Board &board);
 
-    GameState check_win() const;
+    GameState check_game_state() const;
 
     std::vector<Move> get_available_moves() const;
 

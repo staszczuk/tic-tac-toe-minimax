@@ -3,10 +3,10 @@
 
 enum class GameState
 {
-    player_x_won,
+    draw,
+    in_progress,
     player_o_won,
-    tie,
-    unresolved
+    player_x_won
 };
 
 #endif
