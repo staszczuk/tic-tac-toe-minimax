@@ -207,12 +207,19 @@ void Board::undo_move(Move move) const
 
 std::ostream &operator<<(std::ostream &os, const Board &board)
 {
+    os << "  ";
+    for (unsigned int col = 0; col < board.cols; col++)
+    {
+        os << col % 10 << ' ';
+    }
+    os << '\n';
     for (unsigned int row = 0; row < board.rows; row++)
     {
         if (row != 0)
         {
             os << '\n';
         }
+        os << row % 10 << ' ';
         for (unsigned int col = 0; col < board.cols; col++)
         {
             os << board.fields[row][col] << ' ';
