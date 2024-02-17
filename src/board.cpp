@@ -196,6 +196,15 @@ void Board::make_move(Move move, Mark mark) const
     this->fields[move.row][move.col] = mark;
 }
 
+void Board::undo_move(Move move) const
+{
+    if (move.row >= this->rows or move.col >= this->cols)
+    {
+        throw InvalidMoveException();
+    }
+    this->fields[move.row][move.col] = Mark::empty;
+}
+
 std::ostream &operator<<(std::ostream &os, const Board &board)
 {
     for (unsigned int row = 0; row < board.rows; row++)

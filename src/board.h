@@ -26,6 +26,8 @@ public:
 
     void make_move(Move move, Mark mark) const;
 
+    void undo_move(Move move) const;
+
     friend std::ostream &operator<<(std::ostream &os, const Board &board);
 
     ~Board();
