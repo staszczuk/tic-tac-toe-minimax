@@ -4,6 +4,7 @@
 #include "mark.h"
 #include "minimax_player.h"
 #include "game.h"
+#include "random_player.h"
 
 int main()
 {

@@ -25,4 +25,6 @@ add_executable(tic-tac-toe
     src/move.h
     src/player.cpp
     src/player.h
+    src/random_player.cpp
+    src/random_player.h
 )
