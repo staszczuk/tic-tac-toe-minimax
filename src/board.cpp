@@ -187,11 +187,11 @@ void Board::make_move(Move move, Mark mark) const
 {
     if (move.row >= this->rows or move.col >= this->cols)
     {
-        throw InvalidMoveException();
+        throw std::runtime_error("Invalid move");
     }
     if (mark == Mark::empty)
     {
-        throw InvalidMoveException();
+        throw std::runtime_error("Invalid move");
     }
     this->fields[move.row][move.col] = mark;
 }
@@ -200,7 +200,7 @@ void Board::undo_move(Move move) const
 {
     if (move.row >= this->rows or move.col >= this->cols)
     {
-        throw InvalidMoveException();
+        throw std::runtime_error("Invalid move");
     }
     this->fields[move.row][move.col] = Mark::empty;
 }
