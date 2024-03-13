@@ -1,9 +1,9 @@
 #ifndef RANDOM_PLAYER_H
 #define RANDOM_PLAYER_H
 
-#include <random>
-
 #include "player.h"
+
+#include <random>
 
 class RandomPlayer : public Player
 {

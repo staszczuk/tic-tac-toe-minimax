@@ -1,10 +1,10 @@
-#include <iostream>
-
 #include "human_player.h"
 #include "mark.h"
 #include "minimax_player.h"
 #include "game.h"
 #include "random_player.h"
+
+#include <iostream>
 
 int main()
 {

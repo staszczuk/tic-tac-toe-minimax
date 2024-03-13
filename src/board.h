@@ -1,12 +1,12 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include <vector>
-
 #include "game_state.h"
 #include "invalid_move_exception.h"
 #include "mark.h"
 #include "move.h"
+
+#include <vector>
 
 const unsigned int def_rows = 3;
 const unsigned int def_cols = 3;
